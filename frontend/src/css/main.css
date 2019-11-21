@@ -1,0 +1,222 @@
+
+/* variables */
+:root {
+    --card-text-bg-color: #000000cc;
+    --card-text-bg-color-gradient-start: #33cc997e;
+    --card-text-bg-color-gradient-end: #00000066;
+    --card-text-font-color-main: rgb(230, 230, 230);
+    --card-text-font-color-fancy: #33cc99;
+}
+
+/* general overrrides */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* styles */
+/* header */
+header {
+    position: relative;
+    text-align: center;
+    margin: 40px 0;
+}
+
+header h2 {
+    font-size: 1.9em;
+    margin-top: 1em;
+}
+
+header h4 {
+    font-size: 0.9em;
+}
+
+/* card container */
+.card-container {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 1rem;
+    max-width: 1200px;
+    align-items: start;
+    line-height: 1rem;
+}
+
+/* card item */
+.card-item {
+    text-align: center;
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.card-item .card-team-img {
+    position: relative;
+    margin-bottom: -5px;
+}
+
+.card-item .card-team-img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--card-text-bg-color);
+    background: -webkit-gradient(linear, left bottom, left top, from(#111), to(rgba(0, 0, 0, 0.4)));
+    background: linear-gradient(to top, #111, rgba(0, 0, 0, 0.4));
+    background: -webkit-gradient(linear, left bottom, left top, from( var(--card-text-bg-color-gradient-start) ), to( var(--card-text-bg-color-gradient-end) ) );
+    background: linear-gradient(to top, var(--card-text-bg-color-gradient-start), var(--card-text-bg-color-gradient-end));
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+}
+
+.card-item:hover .card-team-img:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-item .card-info {
+    position: absolute;
+    bottom: -500px;
+    left: 0;
+    padding: 0 15px;
+    width: 100%;
+    z-index: 1;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+
+    color: #eee;
+    color: var(--card-text-font-color-main);
+    fill: #eee;
+    fill: var(--card-text-font-color-main);
+}
+
+.card-item:hover .card-info {
+    bottom: 15px;
+}
+
+.card-item .card-info h6 {
+    font-size: 1.2rem;
+    color: inherit;
+    letter-spacing: 1px;
+    margin-bottom: .3rem;
+}
+.card-item .card-info span {
+    display: block;
+    font-size: .9rem;
+    font-style: italic;
+    margin-bottom: 1.1rem;
+    color: #EE3158;
+    color: var(--card-text-font-color-fancy);
+}
+.card-item .card-info p {
+    margin: 10px 0;
+    font-size: .8rem;
+}
+
+.card-item .actions {
+    display:inline-flex;
+    margin-top: 1rem;
+}
+
+.card-item .card-info .icon {
+    margin: 0 15px;
+    font-size: 1rem;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    transform: scale(0.8);
+    transition:all .3s;
+    cursor: pointer;
+}
+
+.card-item .card-info .icon i {
+    font-size: 1.8rem;
+    margin-bottom: .7rem;
+}
+
+.card-item .card-info .icon:hover {
+    transform: scale(1);
+}
+
+/* card * table */
+.card-container.tableView {
+    display: table;
+    border-collapse:separate;
+    border-spacing: 0 10px;
+
+    min-width: 400px;
+}
+
+.card-container.tableView .card-item {
+    display: table-row;
+    vertical-align: middle;
+    position: relative;
+
+    background-color: #e9e9e9;
+    padding: 10px;
+}
+
+.card-container.tableView .card-item > * {
+    display: table-cell;
+    vertical-align: middle;
+
+    color: #34495e;
+}
+
+.card-container.tableView .card-item .card-team-img {
+    vertical-align: top;
+}
+
+.card-container.tableView .card-item .card-team-img:after {
+    display: none;
+}
+
+.card-container.tableView img {
+    max-width: 150px;
+    min-width: 100px;
+    width: auto;
+    max-height: 100%;
+    height: auto;
+
+    padding: 10px;
+}
+
+.card-container.tableView .card-info {
+    position: relative;
+    bottom: 0;
+    text-align: left;
+    padding-top: 60px;
+}
+
+.card-container.tableView .actions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    margin: 0;
+}
+
+
+/* footer */
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    margin-top: auto;
+}

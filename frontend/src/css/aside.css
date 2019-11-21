@@ -1,0 +1,179 @@
+
+.left {
+    overflow: hidden;
+
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.left > * {
+    flex: 0 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+
+    padding: 70px 0;
+    position: relative;
+    left: 0;
+
+    transition: left .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.left.showForm > * {
+    left: -100%;
+}
+
+
+/* the form */
+.submitButton{
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    margin-top: 20px;
+    padding: 10px 15px 10px 15px;
+    background-color: #34495e;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.submitButton:hover{
+    background-color: #607d8b;
+}
+
+.closeFormButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #34495e;
+    display: inline-block;
+}
+
+.addUserButton {
+    width: 80%;
+    margin: 20px auto;
+    padding: 5px 10px 5px 40px;
+    color: #34495e;
+    font-size: 1.3rem;
+    border-left: 5px solid #34495e;
+    text-align: left;
+}
+
+.addUserButton:hover {
+    border-color: #EE3158;
+    border-color: var(--card-text-font-color-fancy, #EE3158);
+    color: #EE3158;
+    color: var(--card-text-font-color-fancy, #EE3158);
+}
+
+.underline{
+    margin-top: -1px;
+    width: 0px;
+    height: 2px;
+    background-color: #34495e;
+    transition: 0.3s;
+}
+
+.left form label{
+    margin: 8px 0 0 0;
+    color: #34495e;
+    width: 100%;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+input[type="text"], input[type="password"], textarea {
+    margin-top: 10px;
+    border: 0;
+    border-bottom: solid 2px;
+    width: 100%;
+    border-color: #b3b3b3;
+    font-size: 1.2rem;
+    font-family: inherit;
+}
+
+textarea {
+    height: 4rem;
+}
+
+input[type="text"]:focus + .underline, input[type="password"]:focus + .underline, textarea:focus + .underline {
+    width: 100%;
+}
+
+button{
+    color: white;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+input:focus, button:focus, textarea:focus {
+    outline:none;
+}
+
+.submit-error {
+    margin-bottom: 15px;
+    font-size: 0.7rem;
+    color: #c50202;
+    white-space: normal;
+}
+
+/* layout */
+/*layout*/
+section[name=layout] {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.left label {
+    display: inline-block;
+    margin: 15px;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.left label i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.left input[type="radio"] {
+    display: none;
+}
+
+.left input[type="radio"]:checked + label {
+    color: #b44b37;
+    color: var(--card-text-font-color-fancy, #EE3158);
+}
+
+/* logout */
+section[name=logout] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25px 10px;
+}
+
+section[name=logout] button {
+    color: #333;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+section[name=logout] button:hover {
+    color: #EE3158;
+    color: var(--card-text-font-color-fancy, #EE3158);
+}
